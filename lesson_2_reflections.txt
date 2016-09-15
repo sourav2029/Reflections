@@ -1,25 +1,41 @@
 What happens when you initialize a repository? Why do you need to do it?
-
+==>
 Git starts tracking the files in this repository/folder. It creates a hidden folder (.git) to track all these information.
 Also there is no initial commit when we initialize a repo, we should do it manually when needed.
 
 How is the staging area different from the working directory and the repository?
 What value do you think it offers?
-
+==>
 Staging area consists only of those files which we think are complete for our next commit , We do not add those files to the staging area
 which we don't want to add. Also staging area is not a part of either of the working directory or repository. These are those changes which will we committed once we commit . We can think of staging area as an unique part of working directory which is less likely to change in the future if there is not a bug or major feature change in our project.
 
 How can you use the staging area to make sure you have one commit per logical
 change?
+==>
 I can store the changes i want , to fix one logical error or add some new logical feature in the staged area . When I am done making changes in all the files for this particular logical change i will add a commit with all the changes required to make this logical change work.
 
 What are some situations when branches would be helpful in keeping your history
 organized? How would branches help?
+==>
+Branches are helpful in a scenario where you want to make some change in the codebase but are still not sure of the potential of the change . You may want making some experimental changes in a separate branch and then merge that branch when the experimental feature is successful.
 
 How do the diagrams help you visualize the branch structure?
+==>
+Diagrams help you visualize the branch structure . You can track down the commits in the order in which they were committed .
+Also It shows some important information about the commits belonging to different branches. This visualization makes it easier to track down the changes in the different branches of the repo.
 
 What is the result of merging two branches together? Why do we represent it in
 the diagram the way we do?
+==>
+The changes  made in both the branches are combined together . Merging a branch with the master branch typically means finally adding those features to your project . We represent the diagram in the way so as to keep track of the commits that were made in each of the branches.
 
 What are the pros and cons of Git’s automatic merging vs. always doing merges
 manually?
+
+==>
+pros==>
+The automatic commit feature is really helpful if we want to merge two branches which have changes which doesn't conflict with one another . Many a times we may have branches which are meant to create entirely different features and thus have no conflicts while merging them . Also if there are conflicts git notifies us where the conflicts are ..so its also helpful
+
+cons==>
+Well may be sometimes you do not want to edit the code written by some other developer as it is easier to commit mistakes .
+Also in cases of conflict you finally have to collaborate with the other developers . So git's automatic merging feature is less helpful in that scenario.
